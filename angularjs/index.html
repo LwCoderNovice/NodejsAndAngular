@@ -8,7 +8,24 @@
 </head>
 <body>
   <div ng-controller="oneController">
-    {{greeting}}
+  输入框：<input type="text" name="" ng-model="testValue" id="">
+   原文字： {{greeting}}
+   转换后： {{greeting|reverse}}
+   转换大写后： {{greeting|reverse:true}}
+   {{gettheInput()}}
+  </div>
+
+  <div ng-controller="listController">
+    <ul>
+      <li ng-repeat="person in list">
+        {{$index}}姓名： {{person.name}} -- 年龄：{{person.age}}
+        <p>$first--{{$first}}</p>
+        <p>$last--{{$last}}</p>
+        <p>$middle--{{$middle}}</p>
+        <p>$odd--{{$odd}}</p>
+        <p ng-bind="'$even--' + $even"></p>
+      </li>
+    </ul>
   </div>
   <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
   <script src="./app/app.js"></script>
